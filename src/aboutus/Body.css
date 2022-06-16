@@ -1,0 +1,46 @@
+.body{
+    background-color: #4da4d3;
+    padding:120px 150px;
+    color: #ffffff;
+}
+.body__about__header{
+   font-size: 72px;
+   margin-bottom: 35px;
+}
+.body__about__para{
+    font-size: 32px;
+    margin-bottom: 24px;
+    line-height: 2.5rem;
+}
+
+.body__team{
+    margin-top: 100px;
+}
+
+.body__team__header{
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.team__members{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+
+.our__investor{
+    margin-top:100px;
+}
+.our__investor__heading{
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.our__investor__company{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
