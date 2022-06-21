@@ -2,6 +2,8 @@ import { React , useState } from 'react';
 import './Form.css';
 import {useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import fireDb from '../firebase';
+import { toast } from 'react-toastify';
 
 function Form() {
 
@@ -62,10 +64,27 @@ function Form() {
           return;
       }
       setSend(true);
-      console.log(isEmailInCorrect,isNameInCorrect,isSubjectInCorrect);
+      // console.log(isEmailInCorrect,isNameInCorrect,isSubjectInCorrect);
+      const currstate={
+        name:{enteredName},
+        email:{enteredEmail},
+        subject:{enteredSubject}
+      }
+      console.log("trying to send");
       setTimeout(()=>{
-        navigate('/');
-      },1000)
+        fireDb.child('requestdemo').push(currstate,(err)=>{
+          if(err)
+          {
+            console.log("notsended");
+           toast.error(err);
+          }
+          else{
+            console.log("sended");
+            toast.success("successfully send");
+          }
+        });
+        // navigate('/');
+      },500)
       // setEnteredEmailIsTouched(false);
     }
 

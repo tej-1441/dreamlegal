@@ -91,8 +91,7 @@ function allFalse(event){
     <div className='home'>
       <div className='home__first'>
        <div className='home__content'>
-       <h1 className='home__header'>Discover top Business <br/>And Software
-      Service partner</h1>
+       <h1 className='home__header'>Discover top business & <br />software service partner</h1>
       <Form onSubmit={handleFormSubmit} className="d-flex search__engine">
           <Form.Control
             type="search"
