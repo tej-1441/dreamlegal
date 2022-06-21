@@ -64,7 +64,7 @@ function Form() {
       setSend(true);
       console.log(isEmailInCorrect,isNameInCorrect,isSubjectInCorrect);
       setTimeout(()=>{
-        navigate('/aboutus');
+        navigate('/');
       },1000)
       // setEnteredEmailIsTouched(false);
     }
@@ -72,7 +72,7 @@ function Form() {
   return (
     <div className='form'>
     <h2 className='form__header'>
-        LEAVE A MESSAGE
+        <pre style={{color:'#0dcaf0'}}>LEAVE </pre> A MESSAGE
     </h2>
     <div className='form__content'>
       <form action="/" onSubmit={onSubmitHandler}>
@@ -85,7 +85,8 @@ function Form() {
            type="text" size={50} 
            placeholder='e.g Vishnu' 
          />
-           {isNameInCorrect && enteredNameIsTouched && <p className='error'>This feild is neccessary</p>}
+           {isNameInCorrect && enteredNameIsTouched && 
+           <p className='error'>*This feild is neccessary</p>}
           <br />
         <label  className='email__label'>Your Email</label>
           <br />
@@ -96,7 +97,8 @@ function Form() {
           size={50} 
           placeholder='xyz@.gmail'
         />
-        {isEmailInCorrect && enteredEmailIsTouched && <p className='error'>Is Either empty or Invalid</p>}
+        {isEmailInCorrect && enteredEmailIsTouched && 
+        <p className='error'>*Is Either empty or Invalid</p>}
           <br />
         <label className='subject__label'> Subject</label>
           <br />
@@ -108,7 +110,8 @@ function Form() {
            type="text" 
            size={50} 
            />
-         {isSubjectInCorrect && enteredSubjectIsTouched && <p className='error'>This feild is neccessary</p>}
+         {isSubjectInCorrect && enteredSubjectIsTouched && 
+         <p className='error'>*This feild is neccessary</p>}
           <br />
         <label className='message__label'>Message</label>
           <br />

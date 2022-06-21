@@ -37,7 +37,7 @@ function Body() {
             </div>
             <div className="our__investor">
                 <h1 className='our__investor__heading'>
-                Our inverstor and affiliations
+                Our investor and affiliations
                 </h1>
                 <div className='our__investor__company'>
                  <Investor name="Windrose" 

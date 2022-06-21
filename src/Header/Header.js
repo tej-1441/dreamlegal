@@ -1,29 +1,20 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/esm/Button.js';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {
-     Router,
-    Routes,
-    Route,
-    Link,
     useNavigate
  } from 'react-router-dom';
+
+import {Example} from '../categories/CatergoriesPopover.js';
+import './Header.css';
+
 function Header() {
 
 const navigate=useNavigate();
-const handleHomeClick=()=>{
-   navigate('/');
-}
- const handleResourcesClick=()=>{
-    navigate('/resources');
- }
- const handleSupportClick=()=>{
-    navigate('/support');
-  } 
+
   const handleAboutClick=()=>{
       navigate('/aboutus');
   }
@@ -33,11 +24,26 @@ const handleHomeClick=()=>{
   const handleBrandClick=()=>{
     navigate('/');
   }
+  const handleLegislativeClick = ()=>{
+    navigate('/legislative');
+  }
+  const handleArticlesClick = () =>{
+     navigate('/articles');
+  }
+  const handleInsightClick =()=>{
+    navigate('/insight');
+  }
+  const handleResearchPaperClick =()=>{
+    navigate('/researchpaper');
+  }
 
   return (
-    <Navbar bg="dark" variant="dark" expand="xl">
-      <Container fluid>
-        <Navbar.Brand onClick={handleBrandClick}>DreamLegal</Navbar.Brand>
+    <Navbar className='navbar' bg="dark" variant="dark" expand="xl">
+      <Container fluid className='header'>
+        <div className='brand'>
+        <Navbar.Brand className='header__name' onClick={handleBrandClick}>DreamLegal</Navbar.Brand>
+        </div>
+        <div className='other'>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -45,27 +51,43 @@ const handleHomeClick=()=>{
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link onClick={handleHomeClick}>Home</Nav.Link>
-            <Nav.Link onClick={handleResourcesClick}>Resources</Nav.Link>
-            <Nav.Link onClick={handleSupportClick}>support</Nav.Link>
-
-            <NavDropdown title="Knowus" id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={handleAboutClick}>About</NavDropdown.Item>
-              <NavDropdown.Item onClick={handleContactClick}>
-                Getintouch
+            <Button variant='outline-info'>
+            <Nav.Link  className='navbar__element'><Example /></Nav.Link>
+            </Button>
+            
+            <Button variant="outline-info">
+             <NavDropdown className='navbar__element' title="Readers_Corner" id="navbarScrollingDropdown">
+            
+              <NavDropdown.Item onClick={handleInsightClick}>
+              Our Insight
               </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleLegislativeClick}>
+               Legislative Analysis
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleArticlesClick}>
+                Articles
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleResearchPaperClick}>
+                Research Paper
+              </NavDropdown.Item>
+
             </NavDropdown>
+            </Button>
+            <Button variant="outline-info">
+             <NavDropdown className='navbar__element' title="Know_Us"  id="navbarScrollingDropdown">
+              <NavDropdown.Item onClick={handleAboutClick}>
+              About Us
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleContactClick}>
+                Get In Touch
+              </NavDropdown.Item>
+             </NavDropdown>
+            </Button>
+        
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
+        </div>
+
       </Container>
     </Navbar>
   );

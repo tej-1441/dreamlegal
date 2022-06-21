@@ -2,12 +2,22 @@
     padding: 50px 100px;
     display: flex;
     flex-direction: column;
-     background-color: #4da4d3; 
-     color: aliceblue; 
+    background-image: url("https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-an-empty-light-blue-grungy-textured-vector-id1150263468?k=20&m=1150263468&s=612x612&w=0&h=hSWNPWXmjl6XwojJntWLjIYa5I9MCrSmHKDpeprkhPU=");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .form__header{
+    display: flex;
+    flex-direction: row;
     margin: 0px auto;
     font-size: 42px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.form__header pre{
+    margin: 0px auto;
+    font-size: 44px;
     line-height: 1.4;
     font-weight: 500;
 }
@@ -28,7 +38,7 @@
 }
 
 .error{
-    color:rgb(172, 38, 38);
+    color:rgb(203, 20, 20);
     font-size: 20px;
 }
 .submission__div{
@@ -39,7 +49,7 @@
 }
 .sending{
     margin-left: 100px;
-    color: aliceblue;
+    color: #0dcaf0;
     font-size: 24px;
 }
 input,textarea{

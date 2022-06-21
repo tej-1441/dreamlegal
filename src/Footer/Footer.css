@@ -6,7 +6,7 @@
     align-items: flex-start;
     color: #fff;
     justify-content: space-evenly;
-    background-color: #1B2430;
+    background-color: #333;
 }
 
 .footer__logo img{
@@ -58,4 +58,22 @@
 .link{
     text-decoration: none;
     color: #fff;
+}
+.link:hover{
+    color:#0dcaf0;
+}
+
+.icons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.icon{
+    height: 30px;
+    width: 10px;
+    transform: scale(1.4);
+    color: white;
 }

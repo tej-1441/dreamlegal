@@ -1,14 +1,18 @@
 .body{
-    background-color: #4da4d3;
+    background-image: url("https://media.istockphoto.com/vectors/multicolored-pastel-abstract-background-light-gradient-diffused-white-vector-id1179215846?k=20&m=1179215846&s=612x612&w=0&h=RPzoPqsJQMy1821H93H70nL8y7dssTuk7D58wvBmK3Y=");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding:120px 150px;
-    color: #ffffff;
+    color: #000;
 }
 .body__about__header{
-   font-size: 72px;
+   font-size: 60px;
+   font-weight: 700;
    margin-bottom: 35px;
 }
 .body__about__para{
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 24px;
     line-height: 2.5rem;
 }
@@ -18,7 +22,7 @@
 }
 
 .body__team__header{
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 24px;
 }
@@ -34,7 +38,7 @@
     margin-top:100px;
 }
 .our__investor__heading{
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 24px;
 }

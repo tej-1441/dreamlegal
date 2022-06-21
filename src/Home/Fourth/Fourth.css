@@ -1,0 +1,47 @@
+.fourthhome{
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: 
+    url("https://media.istockphoto.com/photos/abstract-defocused-blue-soft-background-picture-id1202977979?k=20&m=1202977979&s=612x612&w=0&h=acBeW2v5ZnZq6C3Yh4QkFbgIJBI13ktNDMHof89gSdc=");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.fourthhome__left{
+    flex:0.55;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+.fourthhome__left__quote{
+    font-size: 42px;
+    font-weight: 600;
+}
+.fourthhome__left__saidby{
+    font-size: 16px;
+    font-weight: 600;
+}
+.fourthhome__left__designation{
+    font-size: 1rem;
+    margin-top: -10px;
+}
+.fourthhome__right{
+    flex:0.45;
+    padding-left:20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.fourthhome__right__image{
+    max-height: 500px;
+    max-width: 500px;
+    background-size: contain;
+}

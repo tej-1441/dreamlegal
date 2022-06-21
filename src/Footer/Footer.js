@@ -3,6 +3,7 @@ import {Link,useNavigate} from 'react-router-dom';
 import './Footer.css';
 import Button from 'react-bootstrap/Button';
 
+
 function Footer() {
    const navigate=useNavigate();
   return (
@@ -50,6 +51,17 @@ function Footer() {
 
         <div className='footer__getintouch'>
              <Button variant="outline-info" onClick={()=>(navigate('/getintouch'))}>Get In Touch</Button>
+             <div className='icons'>
+                <a href="https://www.instagram.com/dreamlegal_/?utm_medium=copy_link">
+                  <i class="fa-brands icon fa-instagram-square"></i>
+                </a>
+                <a href="https://t.me/team_dreamlegal">
+                <i class="fa-brands icon fa-telegram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/dreamlegal/">
+                <i class="fa-brands icon fa-linkedin"></i>
+                </a>
+             </div>
         </div>
     </div>
   )

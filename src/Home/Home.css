@@ -1,0 +1,119 @@
+.home{
+   margin: 0px;
+   padding: 0px;
+}
+.home__first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url("https://media.istockphoto.com/photos/abstract-blue-soft-background-picture-id1126070275?k=20&m=1126070275&s=612x612&w=0&h=8tH8zlnfl2ZgUXn-1Sak5eZ6nWOVsR9jg92Outbc4iM=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:90vh;
+    width: 100vw;
+    color:#fff;
+    position: relative;
+    padding: 250px 100px 200px 50px;
+}
+.home__content{
+    flex:0.6;
+}
+.home__logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.home__header{
+    margin-bottom: 20px;
+    font-family: Arial,serif;
+    font-weight: 700;
+}
+.search__engine{
+    max-width: 50vw;
+    margin-bottom: 10px;
+}
+.searched__item{
+    z-index: 2;
+    background-color: aqua;
+    color: black;
+    max-width:50vw ;
+    max-height: 310px;
+    overflow-y: scroll;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgb(238, 238, 238,0.7));
+
+}
+.friend{
+    padding: 10px 10px 10px 30px;
+    font-family: serif;
+}
+.friend div{
+    font-size: 20px;
+}
+.teacher{
+    padding: 10px 10px 10px 30px;
+    font-family: serif;
+}
+.teacher div{
+    font-size: 20px;
+}
+.teacher hr,.friend hr{
+    margin-top: -5px;
+}
+
+
+.home__second{
+    height: 100vh;
+    width: 100vw;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url("https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-a-plain-blank-white-colored-vector-id1146604532?k=20&m=1146604532&s=612x612&w=0&h=X7r2C--w3sOzW73r3myZ6DWGOyc7T7jyJ0pSTwoBbiM=");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.home__second__left{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.home__second__left h1{
+  font-size: 44px;
+  font-weight: 700;
+}
+.home__second__left__software{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.home__second__left__software button{
+    width: 60%;
+    margin-top: 10px;
+    border-width: 2px;
+    border-color: transparent;
+    font-size: 19px;
+    text-align: start;
+}
+.home__second__right{
+    flex: 0.5;
+    margin-top: 50px;
+    padding-left: 0px;
+}
+.software{
+    font-weight: 600;
+}
+.software.selected{
+    border-color:red;
+    color: red;
+}
