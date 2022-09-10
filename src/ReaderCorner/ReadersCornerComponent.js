@@ -1,11 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import './ReadersCornerComponent.css';
 
 function ReadersCornerComponent(props) {
     const navigate=useNavigate();
   return (
     <Card 
+      className='card'
       bg='secondary'
       text='light'
       style={{ width: '23rem' }}>

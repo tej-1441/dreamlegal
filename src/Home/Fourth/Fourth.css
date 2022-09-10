@@ -1,47 +1,37 @@
 .fourthhome{
-    width: 100vw;
-    height: 100vh;
-    padding: 50px;
+    height:auto;
+    background-color: #f5f8fd;
+    padding:3%;
+}
+.fourthhome__header{
+   font-size: 2.5rem;
+   font-weight: 600;
+   color:#413e66;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+.divider{
+    width: 45%;
+    margin: 0px auto;
+    margin-bottom: 50px;
+}
+.fourthhome__elements{
+    overflow-y: hidden;
+    overflow-x: scroll;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    background-image: 
-    url("https://media.istockphoto.com/photos/abstract-defocused-blue-soft-background-picture-id1202977979?k=20&m=1202977979&s=612x612&w=0&h=acBeW2v5ZnZq6C3Yh4QkFbgIJBI13ktNDMHof89gSdc=");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
 }
-.fourthhome__left{
-    flex:0.55;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+.fourthhome__elements::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
 
-}
-.fourthhome__left__quote{
-    font-size: 42px;
-    font-weight: 600;
-}
-.fourthhome__left__saidby{
-    font-size: 16px;
-    font-weight: 600;
-}
-.fourthhome__left__designation{
-    font-size: 1rem;
-    margin-top: -10px;
-}
-.fourthhome__right{
-    flex:0.45;
-    padding-left:20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-}
-.fourthhome__right__image{
-    max-height: 500px;
-    max-width: 500px;
-    background-size: contain;
+.more__review{
+   display: flex;
+   flex-direction: row;
+   align-items: flex-end;
+   justify-content: flex-end;
+   font-size: 1.3rem;
+   font-weight: 500;
 }

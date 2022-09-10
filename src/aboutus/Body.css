@@ -1,8 +1,5 @@
 .body{
-    background-image: url("https://media.istockphoto.com/vectors/multicolored-pastel-abstract-background-light-gradient-diffused-white-vector-id1179215846?k=20&m=1179215846&s=612x612&w=0&h=RPzoPqsJQMy1821H93H70nL8y7dssTuk7D58wvBmK3Y=");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #f5f8fd;
     padding:120px 150px;
     color: #000;
 }

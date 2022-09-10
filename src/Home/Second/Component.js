@@ -1,9 +1,15 @@
 import React from 'react'
 import './Component.css';
+import {useNavigate} from 'react-router-dom';
 function Component(props) {
-    // const arr=new Array(props.rating);
+    const navigate=useNavigate();
+    const handleClick=()=>{
+        navigate(`/${props.name}`)
+    }
   return (
-    <div className='component'>
+    
+    <div className='component' onClick={handleClick}>
+    
           <h6 component__header>{props.name}</h6>
           <div className='component__rating'>
            {

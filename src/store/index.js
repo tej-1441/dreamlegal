@@ -1,23 +1,27 @@
 import {createSlice,configureStore} from '@reduxjs/toolkit';
 
-const aboutusInitialState={
-    counter:0
+const authenticationInitialState={
+    user:"",
 };
         
 
-const AboutusSlice=createSlice({
-    name:'aboutus',
-    initialState:aboutusInitialState,
+const AuthenticationSlice=createSlice({
+    name:'auth',
+    initialState:authenticationInitialState,
     reducers:{
-
+        setuser(state,action){
+            console.log("action",action.payload);
+            state.user=action.payload;
+            console.log("user",state.user);
+        }
 
     }
 })
 
 
 const store=configureStore({
-    reducer: AboutusSlice.reducer,
+    reducer: AuthenticationSlice.reducer,
 });
 
-export const AboutusAction=AboutusSlice.actions;
+export const AuthenticationAction=AuthenticationSlice.actions;
 export default store;

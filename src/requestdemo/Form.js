@@ -17,6 +17,8 @@ function Form() {
     const [enteredSubject,setEnteredSubject]=useState('');
     const [enteredSubjectIsTouched,setEnteredSubjectIsTouched]=useState(false);
     
+    const[enteredMessage,setEnteredMessage]=useState('');
+
     let isFormValid=false;
     
     const handleNameChange=(event)=>{
@@ -34,6 +36,10 @@ function Form() {
       
     }
     
+    const handleMessageChange= (event) =>{
+      setEnteredMessage(event.target.value);
+    }
+
     const handleNameBlur = ()=>{
       setEnteredEmailIsTouched(true);
     }
@@ -44,10 +50,12 @@ function Form() {
       setEnteredSubjectIsTouched(true);
     }
     
+
     let isNameInCorrect=(enteredName.trim().length===0 ) || (!enteredNameIsTouched);
     let isEmailInCorrect=(enteredEmail.indexOf('@')===-1) || (!enteredEmailIsTouched);
     let isSubjectInCorrect=(enteredSubject.trim().length===0) || (!enteredSubjectIsTouched);
     // console.log(isNameInCorrect,isEmailInCorrect,isSubjectInCorrect);
+    
     const [send,setSend]=useState(false);
 
     const onSubmitHandler=(event)=>{
@@ -64,11 +72,13 @@ function Form() {
           return;
       }
       setSend(true);
-      // console.log(isEmailInCorrect,isNameInCorrect,isSubjectInCorrect);
+
       const currstate={
         name:{enteredName},
         email:{enteredEmail},
-        subject:{enteredSubject}
+        subject:{enteredSubject},
+        message:{enteredMessage}
+        
       }
       console.log("trying to send");
       setTimeout(()=>{
@@ -80,11 +90,14 @@ function Form() {
           }
           else{
             console.log("sended");
-            toast.success("successfully send");
+            toast.success("successfully send",{
+              position:"top-center",
+              autoClose:700
+            });
           }
         });
-        // navigate('/');
-      },500)
+        navigate('/');
+      },1000)
       // setEnteredEmailIsTouched(false);
     }
 
@@ -134,7 +147,7 @@ function Form() {
           <br />
         <label className='message__label'>Message</label>
           <br />
-        <textarea className='message__input' size={50} row={10} col={1000}></textarea>
+        <textarea value={enteredMessage} onChange={handleMessageChange} className='message__input' size={50} row={10} col={1000}></textarea>
           <br />
         <div className='submission__div'>
         <Button  variant="outline-dark" type="submit">submit</Button>

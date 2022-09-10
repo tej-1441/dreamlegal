@@ -1,11 +1,9 @@
 .form{
-    padding: 50px 100px;
+    padding: 50px 200px;
     display: flex;
     flex-direction: column;
-    background-image: url("https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-an-empty-light-blue-grungy-textured-vector-id1150263468?k=20&m=1150263468&s=612x612&w=0&h=hSWNPWXmjl6XwojJntWLjIYa5I9MCrSmHKDpeprkhPU=");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: #f5f8fd;
+    color: #413e66;
 }
 .form__header{
     display: flex;

@@ -1,17 +1,38 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutus from './aboutus/Aboutus.js';
-import Getintouch from './getinTouch/Getintouch';
+import Getintouch from './requestdemo/RequestDemo';
 import Header from './Header/Header.js';
 import OurInsight from './ReaderCorner/OurInsight';
-import Articles from './ReaderCorner/Articles';
-import ResearchPaper from './ReaderCorner/ResearchPaper';
-import Legislative from './ReaderCorner/Legislative';
 import Footer from './Footer/Footer.js';
 // import Header1 from './Header1/Header1';
-import Home from './Home/Home.js'
+import Home from './Home/Home.js';
+import Catergories from './categories/Catergories';
+import Login from './Header/Login/Login.js';
+import {auth} from './firebase';
+import {AuthenticationAction} from './store/index.js';
+import {useSelector,useDispatch} from 'react-redux';
+import {useEffect} from 'react';
+import Requested from './requestedDemo/Requested';
 
 function App() {
+    const dispatch=useDispatch();
+    const user=useSelector((state)=>state.user);
+    useEffect(()=>{
+      auth.onAuthStateChanged((authuser)=>{
+        if(authuser){
+          console.log(authuser.email);
+          dispatch(AuthenticationAction.setuser(authuser.email));
+        }
+        else
+        {
+          dispatch(AuthenticationAction.setuser(null));
+        }
+      })
+    },[])
+
+
+
   return (
 <Router>
     <Routes>
@@ -37,35 +58,37 @@ function App() {
           <Footer />
           </>
         } /> 
-        <Route path="/insight" element={
+        <Route path="/categories" element={
+          <>
+          <Header />
+          <Catergories />
+          <Footer />
+          </>
+        } />
+        <Route path="/readerscorner" element={
           <>
           <Header />
           <OurInsight/>
           <Footer />
           </>
         } />
-        <Route path="/articles" element={
+        <Route path="/login" element={
           <>
           <Header />
-          <Articles />
-          <Footer />
-          </>
-
-        } /> 
-        <Route path="/researchpaper" element={
-          <>
-          <Header />
-          <ResearchPaper/>
+          <Login/>
           <Footer />
           </>
         } />
-        <Route path="/legislative" element={
+          <Route path="/morereview" element={
           <>
-          <Header />
-          <Legislative />
-          <Footer />
+             <Header />
           </>
-        } /> 
+          } />
+          <Route path="/requested" element={  
+            <Requested />
+          }/>
+         
+
     </Routes>
 </Router>
   );

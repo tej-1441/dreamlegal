@@ -1,12 +1,21 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Fifth.css';
 function Fifth() {
 
+    const user=useSelector((state)=>state.user);
     const navigate=useNavigate();
     const handleSell =()=>{
-        navigate('./sell')
+      if(user)
+      {
+         navigate('/sell');
+      
+      }
+      else{
+         navigate('/login');
+      }
     }
 
   return (
@@ -24,7 +33,7 @@ function Fifth() {
            Your future customers are researching their next purchase on DreamLegal.
            Make sure they can find you.
            </div>
-           <Button onClick={handleSell} variant='outline-info'>Claim DreamLeagal Profile</Button>
+           <Button onClick={handleSell} variant='outline-info'>{!user?'Claim DreamLeagal Profile':user}</Button>
         </div>
         <div className='fifthhome__right'>
            <img className='fifthhome__right__image' src="https://www.g2.com/assets/profile_screenshots-a84b3e5b2d744fbcaafb601feb1762582fb2cd5bdbaaa3d3a32b8dd4196c5b1b.png" alt="fifthhome__right__image"></img>

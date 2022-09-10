@@ -24,6 +24,7 @@ function Footer() {
                 <Link className='link' to="low">Law firms</Link>
                 <Link className='link' to="firm">Tax consulting firms</Link>
                 <Link className='link' to="department">In house departments</Link>
+                <Link className='link' to="department">In house departments</Link>
             </div>
         </div>
 

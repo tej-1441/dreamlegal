@@ -1,20 +1,18 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/esm/Button.js';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {
-    useNavigate
- } from 'react-router-dom';
-
-import {Example} from '../categories/CatergoriesPopover.js';
+import {useNavigate} from 'react-router-dom';
+import {auth} from '../firebase';
+import {useSelector} from 'react-redux';
 import './Header.css';
 
 function Header() {
-
-const navigate=useNavigate();
-
+  
+  const user=useSelector((state)=>state.user);
+  const navigate=useNavigate();
   const handleAboutClick=()=>{
       navigate('/aboutus');
   }
@@ -24,24 +22,27 @@ const navigate=useNavigate();
   const handleBrandClick=()=>{
     navigate('/');
   }
-  const handleLegislativeClick = ()=>{
-    navigate('/legislative');
+  const handleCategories = () =>{
+    navigate('/categories');
   }
-  const handleArticlesClick = () =>{
-     navigate('/articles');
+  const handleReadersCorner = () =>{
+    navigate('/readerscorner');
   }
-  const handleInsightClick =()=>{
-    navigate('/insight');
+  const handleAuthentication =() =>{
+    if(user){
+      auth.signOut();
+      return;
+    }
+    else{
+      navigate('/login');
+    }
   }
-  const handleResearchPaperClick =()=>{
-    navigate('/researchpaper');
-  }
-
+  console.log(user);
   return (
-    <Navbar className='navbar' bg="dark" variant="dark" expand="xl">
+    <Navbar className={`navbar`} sticky="top" expand="xl">
       <Container fluid className='header'>
         <div className='brand'>
-        <Navbar.Brand className='header__name' onClick={handleBrandClick}>DreamLegal</Navbar.Brand>
+        <div className='header__name' onClick={handleBrandClick}>DreamLegal</div>
         </div>
         <div className='other'>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -51,37 +52,30 @@ const navigate=useNavigate();
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+               <Button variant='outline-info'>
+             <Nav.Link onClick={handleCategories}
+              className='navbar__element'>Categories</Nav.Link>
+            </Button>
+            
             <Button variant='outline-info'>
-            <Nav.Link  className='navbar__element'><Example /></Nav.Link>
-            </Button>
-            
-            <Button variant="outline-info">
-             <NavDropdown className='navbar__element' title="Readers_Corner" id="navbarScrollingDropdown">
-            
-              <NavDropdown.Item onClick={handleInsightClick}>
-              Our Insight
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={handleLegislativeClick}>
-               Legislative Analysis
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={handleArticlesClick}>
-                Articles
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={handleResearchPaperClick}>
-                Research Paper
-              </NavDropdown.Item>
-
-            </NavDropdown>
+             <Nav.Link onClick={handleReadersCorner}
+              className='navbar__element'>Readers_Corner</Nav.Link>
             </Button>
             <Button variant="outline-info">
-             <NavDropdown className='navbar__element' title="Know_Us"  id="navbarScrollingDropdown">
-              <NavDropdown.Item onClick={handleAboutClick}>
+             <NavDropdown  title="Know_Us" id="navbarScrollingDropdown">
+              <NavDropdown.Item  onClick={handleAboutClick}>
               About Us
               </NavDropdown.Item>
               <NavDropdown.Item onClick={handleContactClick}>
-                Get In Touch
+                Request Demo
               </NavDropdown.Item>
              </NavDropdown>
+            </Button>
+            <Button variant='outline-info'>
+             <Nav.Link onClick={handleAuthentication}
+              className='navbar__element'>
+              {!user?'Login':user}
+              </Nav.Link>
             </Button>
         
           </Nav>

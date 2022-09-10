@@ -6,89 +6,98 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-image: url("https://media.istockphoto.com/photos/abstract-blue-soft-background-picture-id1126070275?k=20&m=1126070275&s=612x612&w=0&h=8tH8zlnfl2ZgUXn-1Sak5eZ6nWOVsR9jg92Outbc4iM=");
+    background-color:#f5f8fd;
+    background-image: url("file:///C:/Users/91831/Downloads/DreamLegal-main%20(1)/DreamLegal-main/img/intro-img.svg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height:90vh;
+    background-size:50% 90%;
+    background-position:right bottom;
+    height:100vh;
     width: 100vw;
-    color:#fff;
     position:relative;
-    padding: 18% 8% 0% 1%;
+    padding: 18% 10% 0% 1%;
 }
 .home__content{
     flex:0.6;
+    padding: 0px 10% 0% 5%;
 }
 .home__logo{
     flex:0.4;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: 50px;
-    margin-top: 30px;
 }
 .home__header{
     margin-bottom: 18px;
+    display: flex;
+    flex-direction: row;
+    font-size: 3rem;
     font-family: Arial,serif;
     font-weight: 700;
+    color: #413e66;
 }
 .search__engine{
-    max-width: 50vw;
+    max-width: 45vw;
     margin-bottom: 10px;
 }
 .searched__item{
-    z-index: 2;
-    background-color: aqua;
-    color: black;
+    z-index: 5;
+    background-color: #fff;
+    color: #413e66;
     max-width:50vw ;
-    max-height: 510px;
+    max-height: 90%;
     overflow-y: scroll;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgb(238, 238, 238,0.7));
+    /* border:1px solid #413e66; */
+    /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgb(238, 238, 238,0.7)); */
 
 }
+.search__button{
+    background-color: #413e66 !important;
+}
 .friend{
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 10px;
     font-family: serif;
 }
 .friend div{
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .teacher{
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 10px;
     font-family: serif;
 }
 .teacher div{
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .teacher hr,.friend hr{
     margin-top: -5px;
 }
+.searched__item__name{
+    padding: 2px 2px 2px 15px;
+
+}
+.searched__item__name:hover{
+    background-color: #cce6f6;
+    color: #0dcaf0;
+}
 
 
 .home__second{
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
-    padding: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    background-image: url("https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-a-plain-blank-white-colored-vector-id1146604532?k=20&m=1146604532&s=612x612&w=0&h=X7r2C--w3sOzW73r3myZ6DWGOyc7T7jyJ0pSTwoBbiM=");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #fff;
 }
 .home__second__left{
-    flex: 0.5;
+    flex: 0.35;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    color: #413e66;
 }
 .home__second__left h1{
-  font-size: 44px;
+  font-size: 2.75rem;
   font-weight: 700;
 }
 .home__second__left__software{
@@ -99,22 +108,35 @@
 
 }
 .home__second__left__software button{
-    width: 60%;
+    width: 80%;
     margin-top: 10px;
     border-width: 2px;
     border-color: transparent;
-    font-size: 19px;
+    font-size: 1.19rem;
     text-align: start;
 }
 .home__second__right{
-    flex: 0.5;
-    margin-top: 50px;
-    padding-left: 0px;
+    height: 100%;
+    width: 100%;
+    padding-right: 30px;
+    padding-top: 50px;
+    flex: 0.65;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
 .software{
+    border: 1px solid;
     font-weight: 600;
+    background-color: #fff;
+    color: #413e66;
 }
 .software.selected{
-    border-color:red;
-    color: red;
+    z-index: 1;
+    padding-left: 5px;
+    border-color:#0dcaf0;
+    color:#0dcaf0;
+    transform: scale(1.05);
+    /* box-shadow: 1px 2px 2px 1px #0dcaf0; */
 }

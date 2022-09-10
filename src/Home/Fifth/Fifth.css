@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     padding: 50px;
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,11 +40,18 @@
 .fifthhome__left__header__first{
     color:#5a39a2;
 }
+.fifthhome__left__header__second{
+    color:#413e66;
+}
 .fifthhome__left__para{
     font-size: 24px;
     margin-bottom: 1.5rem;
 }
 .fifthhome__left Button{
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 40px;
+    max-width: 300px;
+    font-weight: 500;
+    border:2px solid;
+    overflow: hidden;
 }

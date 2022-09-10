@@ -1,6 +1,6 @@
 .footer{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -72,8 +72,11 @@
 
 }
 .icon{
-    height: 30px;
-    width: 10px;
+    min-height: 30px;
+    min-width: 10px;
     transform: scale(1.4);
-    color: white;
+    color:#0dcaf0;
+}
+.icon:hover{
+   transform: scale(1.6);
 }

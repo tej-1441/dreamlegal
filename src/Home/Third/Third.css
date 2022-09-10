@@ -5,10 +5,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-image: url("https://media.istockphoto.com/vectors/horizontal-vector-illustration-of-a-plain-blank-white-colored-vector-id1146604532?k=20&m=1146604532&s=612x612&w=0&h=X7r2C--w3sOzW73r3myZ6DWGOyc7T7jyJ0pSTwoBbiM=");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #fff;
 }
 .thirdhome__left{
     flex: 0.5;
@@ -38,11 +35,16 @@
 .thirdhome__right__heading__first{
     color:#5a39a2;
 }
+.thirdhome__right__heading__second{
+    color:#413e66;
+}
 .thirdhome__right__paragraph{
     font-size: 24px;
     margin-bottom: 1.5rem;
 }
 .thirdhome__right Button{
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 500;
+    border:2px solid;
     border-radius: 40px;
 }

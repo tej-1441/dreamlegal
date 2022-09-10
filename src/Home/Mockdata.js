@@ -1,6 +1,6 @@
 
 const Mockdata={
-  "teacher":[
+  "teachers":[
     {"first_name":"sk","last_name":"bhardwaj"},
     {"first_name":"nirankar","last_name":"mishra"},
     {"first_name":"Ashish","last_name":"vishnoi"},
@@ -8,7 +8,7 @@ const Mockdata={
     {"first_name":"pankaj","last_name":"Agarwal"},
     {"first_name":"Anish","last_name":"shrivastva"}
   ],
-  "friend":[
+  "friends":[
     {"first_name":"vishnu","last_name":"verma"},
     {"first_name":"ankesh","last_name":"verma"},
     {"first_name":"pranjal","last_name":"singh"},

@@ -15,8 +15,6 @@ import Videoconfrencing from './Second/Videoconfrencing';
 import Third from './Third/Third.js';
 import Fourth from './Fourth/Fourth.js';
 import Fifth from './Fifth/Fifth';
-import HomeSvg1 from './HomeSvg1';
-import Fade from 'react-reveal/Fade';
 
 function Home() {
   const navigate =useNavigate();
@@ -27,9 +25,15 @@ function Home() {
   const handleFormSubmit =(event)=>{
       event.preventDefault();
   } 
-  const handleSearchClick=()=>{
-    navigate('/')
+  const handleSearchClick=(event)=>{
+    const val=event.target.name;
+    console.log("val",val);
+    navigate(`/${val}`)
   } 
+  const handleClickSearch=(event)=>{
+    console.log("val",searchItem);
+    navigate(`/${searchItem}`);
+  }
   const [categories,setCategories]=useState({first:true,
      second:false,
      third:false,
@@ -50,33 +54,6 @@ function allFalse(event){
     sixth:false,
     seventh:false
   })
-  // switch(event.target.name){
-  //   case "first":
-  //     setCategories(!categories.first)
-  //     break;
-  //   case "second":
-  //     setCategories(!categories.second);
-  //     break;
-  //     case "third":
-  //       setCategories(!categories.third);
-  //       break;
-  //     case "fourth":
-  //       setCategories(!categories.fourth);
-  //       break;
-  //       case "fifth":
-  //         setCategories(!categories.fifth)
-  //         break;
-  //       case "sixth":
-  //         setCategories(!categories.sixth);
-  //         break;
-  //         case "seventh":
-  //           setCategories(!categories.seventh);
-  //           break;
-  //     default:
-  // }
-  // console.log(categories.first);
-
-
   const name=event.target.name;
   setCategories((prevValues)=>{
     return {
@@ -91,7 +68,7 @@ function allFalse(event){
     <div className='home'>
       <div className='home__first'>
        <div className='home__content'>
-       <h1 className='home__header'>Discover top business & <br />software service partner</h1>
+       <h1 className='home__header'>Discover top business &<br />software service partner </h1>
       <Form onSubmit={handleFormSubmit} className="d-flex search__engine">
           <Form.Control
             type="search"
@@ -101,10 +78,10 @@ function allFalse(event){
             value={searchItem}
             onChange={handleSearchChange}
           />
-          <Button className='navbar__element' variant="dark">Search</Button>
+          <Button className='navbar__element search__button' onClick={handleClickSearch} variant="dark">Search</Button>
         </Form>
         <div className='searched__item'>
-          {JSONDATA.teacher.filter((val)=>{
+          {JSONDATA.teachers.filter((val)=>{
           if(searchItem==="")
           {
             return "";
@@ -117,10 +94,10 @@ function allFalse(event){
           return "";
         }).length?
           <div className='teacher'>
-           <h1>Teacher</h1>
+           <h1>Software</h1>
            <hr size="4" />
            <div>
-            {JSONDATA.teacher.filter((val)=>{
+            {JSONDATA.teachers.filter((val)=>{
             if(searchItem==="")
             {
               return "";
@@ -133,18 +110,14 @@ function allFalse(event){
             return "";
             
           }).map((val,key)=>{
-            if(key<=3)
-            {
-              return <div onClick={handleSearchClick}>{val.first_name}</div> 
-            } 
-            else
-            return "";
+          
+              return <div className='searched__item__name' name={val.first_name} onClick={handleSearchClick}>{val.first_name}</div> 
           })}
           </div>
          </div>:""
         }
 
-        {JSONDATA.friend.filter((val)=>{
+        {JSONDATA.friends.filter((val)=>{
           if(searchItem==="")
           {
             return "";
@@ -157,10 +130,10 @@ function allFalse(event){
           return "";
         }).length?
           <div className='friend'>
-            <h1>Friends</h1>
+            <h1>Services</h1>
             <hr size="4"/>
             <div>
-            {JSONDATA.friend.filter((val)=>{
+            {JSONDATA.friends.filter((val)=>{
             if(searchItem==="")
             {
               return "";
@@ -173,21 +146,16 @@ function allFalse(event){
             return "";
             
           }).map((val,key)=>{
-            if(key<=3)
-            {
-              return <div onClick={handleSearchClick} >{val.first_name}</div> 
-            } 
-            else
-            return "";
+             return <div className='searched__item__name' name={val.first_name} onClick={handleSearchClick} >{val.first_name}</div> 
           })}
           </div>
          </div>:""
         }
         </div>
        </div>
-       <Fade right className='home__logo'>
-          <HomeSvg1 />
-       </Fade>
+       <div right className='home__logo'>
+          {/* <HomeSvg1 /> */}
+       </div>
       
       </div>
 
@@ -205,7 +173,6 @@ function allFalse(event){
           </div>
         </div>
           <div className='home__second__right'>
-
               {categories.first && <ProjectManagement />}
               {categories.second && <Videoconfrencing />}
               {categories.third && <EcommercePlatform />}
@@ -213,7 +180,7 @@ function allFalse(event){
               {categories.fifth && <Accounting />}
               {categories.sixth && <Crm />}
               {categories.seventh && <ExpenseManagement />}
-
+          
           </div>
       </div>
   
